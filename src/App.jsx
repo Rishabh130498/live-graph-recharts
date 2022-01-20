@@ -30,9 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const socket = io('http://localhost:4500', {
-  transports: ['websocket', 'polling']
-});
+const socket = io.connect()
 
 const App = ({}) => {
   // const [data, setData] = useState([]);
@@ -78,7 +76,7 @@ const App = ({}) => {
       <LineChart width={500} height={300} data={apiData}>
         <XAxis dataKey="name" />
         <YAxis />
-        <Line dataKey="value" />
+        <Line dataKey="value" />  
       </LineChart>
     </div>
   );
