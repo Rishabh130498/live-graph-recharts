@@ -1,6 +1,6 @@
 const server = require('http').createServer();
 const os = require('os-utils');
-const port = '443' || '80';
+
 const io = require('socket.io')(server, {
     transports: ['websocket', 'polling']
   });
@@ -16,4 +16,4 @@ const io = require('socket.io')(server, {
     }, 5000);
   });
 
-server.listen(port,()=> console.log(`server running on port ${port}`));
+server.listen(4500,()=> console.log('server running on port 4500'));
